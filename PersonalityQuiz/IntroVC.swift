@@ -17,6 +17,6 @@ class IntroVC: UIViewController {
     @IBAction func startQuizPressed(_ sender: Any) {
         performSegue(withIdentifier: "startQuiz", sender: nil)
     }
-    
+    @IBAction func unwindToIntroVC(segue: UIStoryboardSegue) {}
 }
 

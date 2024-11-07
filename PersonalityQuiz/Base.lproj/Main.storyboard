@@ -29,6 +29,9 @@
                                         <rect key="frame" x="0.0" y="49.333333333333371" width="304" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Start Quiz"/>
+                                        <connections>
+                                            <action selector="startQuizPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WA8-Cp-x9E"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -296,10 +299,10 @@
             </objects>
             <point key="canvasLocation" x="1791.6030534351144" y="-27.464788732394368"/>
         </scene>
-        <!--Title-->
+        <!--ResultsVC-->
         <scene sceneID="kFQ-Tk-tIo">
             <objects>
-                <viewController id="Eqe-PD-DOG" customClass="ResultsVC" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ResultsVC" id="Eqe-PD-DOG" customClass="ResultsVC" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XgH-IL-Rgq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -334,10 +337,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="ovg-BU-dJL">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="1N1-40-jOq"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="1N1-40-jOq">
+                            <connections>
+                                <segue destination="JST-p8-Cuw" kind="unwind" unwindAction="unwindToIntroVCWithSegue:" id="NSR-Fl-XDL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="resultDefinition" destination="uSl-Lw-73c" id="WXR-i3-OvO"/>
+                        <outlet property="resultLabel" destination="Ujl-Gf-bAn" id="4B1-pR-OfH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v7f-ea-Af4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="JST-p8-Cuw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2492.3664122137402" y="-27.464788732394368"/>
         </scene>
